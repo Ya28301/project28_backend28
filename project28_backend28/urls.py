@@ -1,20 +1,9 @@
-
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
-
-
-from django.contrib import admin
-from django.urls import path, include  # ← نضيف include هنا
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    
-    # روابط التطبيقات الجديدة
-    path('core/', include('core.urls')),
-    path('content/', include('content.urls')),
-    path('interactions/', include('interactions.urls')),
+    path('', include('core.urls')),  # مسار الصفحة الرئيسية
+    path('content/', include('content.urls')),  # مسار صفحات المحتوى
+    path('interactions/', include('interactions.urls')),  # مسار التفاعل
 ]

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الصفحة الرئيسية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- خط Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- تصميم CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      color: #333;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    header h1:hover {
+      color: #ffc107;
+      cursor: pointer;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      right: 0;
+      bottom: -5px;
+      background-color: #ffc107;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav a:hover {
+      color: #ffc107;
+    }
+
+    .login-btn {
+      background-color: #ffc107;
+      color: #343a40;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #e0b400;
+    }
+
+    main {
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    main h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+
+    main p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .login-btn {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>متجر اكتروني</h1>
+  <div class="nav-container">
+    <nav>
+      <a href="#">الرئيسية</a>
+      <a href="products.html">المنتجات</a>
+      <a href="#">الرسائل</a>
+      <a href="#">من نحن</a>
+    </nav>
+    <button class="login-btn" onclick="location.href='/content/login/'">تسجيل الدخول</button>
+  </div>
+</header>
